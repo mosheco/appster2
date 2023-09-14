@@ -1,0 +1,27 @@
+services:
+  service:
+    build:
+      context: .
+      dockerfile: Dockerfile.appster
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - springapimysql-net
+    depends_on:
+      - mysqldb
+    
+  mysqldb:
+    image: "mysql:8.0"
+    restart: always
+    ports:
+      - 3306:3306
+    networks:
+      - springapimysql-net  
+    environment:
+      MYSQL_DATABASE: the_bank
+      MYSQL_USER: demouser
+      MYSQL_PASSWORD: demopw
+      MYSQL_ROOT_PASSWORD: demopw
+networks:
+  springapimysql-net:
