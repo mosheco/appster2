@@ -9,9 +9,9 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 
 
-import cn.hutool.json.JSON;
-import cn.hutool.json.JSONUtil;
-import cn.hutool.json.JSONObject;
+// import cn.hutool.json.JSON;
+// import cn.hutool.json.JSONUtil;
+// import cn.hutool.json.JSONObject;
 
 
 
@@ -41,7 +41,7 @@ public class HuTool {
 
     // hutool-json测试
     public void testHutoolJSON (String str) {
-	JSON json = JSONUtil.parse(str);
+	// JSON json = JSONUtil.parse(str);
     }
 
     /*
@@ -58,7 +58,7 @@ public class HuTool {
 
 	try {
 	    String a="{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{'a':1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}:1}";
-	    JSONObject jsonObject=new JSONObject(a);
+	    // JSONObject jsonObject=new JSONObject(a);
 	} catch (OutOfMemoryError e) {
 	    return "OutOfMemoryError thrown";
         }

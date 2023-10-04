@@ -17,6 +17,15 @@ echo
 echo "Results of GET with attempt at SQL injection, but using parameterized query:"
 echo "============================================================================"
 curl -s http://localhost:8080/get_balance_parameterized?account_id=9%20OR%201 | jq
+echo
+
+echo "Results of Hutool call, exception name is returned:"
+echo "============================================================================"
+curl -s http://localhost:8080/jsonobject
+echo
+echo
+echo
+
 
 docker-compose down
 
