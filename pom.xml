@@ -38,7 +38,7 @@
 		  <!-- version>5.8.10</version -->
 		  <groupId>cn.katool</groupId>
 		  <artifactId>KaTool</artifactId>
-		  <version>1.9.0</version>
+		  <version>1.9.1</version>
 		</dependency>
 	</dependencies>
 
