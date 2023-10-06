@@ -81,6 +81,43 @@ public class DemoApplication {
 	return objList;
     }
 
+    @GetMapping("/bad_query_overwritten_by_good_query")
+    public List<ResponseObj> bad_query_overwritten_by_good_query( String account_id) {
+	List<ResponseObj> objList = new ArrayList<>();
+
+	if (connection == null) {
+	    // Connect once
+	    connection = get_connection();
+	}
+	
+        try {
+	    String sqlQuery;
+	    sqlQuery =  String.format("SELECT account_id, dollars FROM balance WHERE account_id = %s", account_id);
+	    sqlQuery =  String.format("SELECT account_id, dollars FROM balance WHERE account_id = 7");
+
+            // 1. Create a statement for executing SQL queries
+            Statement statement = connection.createStatement();
+
+            // 2. Execute the SQL query and retrieve the results
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+
+            // 3. Process the query results
+            while (resultSet.next()) {
+                int id = resultSet.getInt("account_id");
+                int dollar_balance = resultSet.getInt("dollars");
+		ResponseObj obj = new ResponseObj(id, dollar_balance);
+		objList.add(obj);
+            }
+
+            // 4. Close the resources
+            resultSet.close();
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+	return objList;
+    }
+
     public List<ResponseObj> get_balance_never_called( String account_id) {
 	List<ResponseObj> objList = new ArrayList<>();
 
