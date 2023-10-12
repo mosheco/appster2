@@ -36,9 +36,12 @@
 		  <!-- groupId>cn.hutool</groupId -->
 		  <!-- artifactId>hutool-json</artifactId -->
 		  <!-- version>5.8.10</version -->
-		  <groupId>cn.katool</groupId>
-		  <artifactId>KaTool</artifactId>
-		  <version>1.9.0</version>
+		  <!-- groupId>cn.katool</groupId -->
+		  <!-- artifactId>KaTool</artifactId -->
+		  <!-- version>1.9.0</version -->
+		  <groupId>io.github.mosheco</groupId>
+		  <artifactId>noop</artifactId>
+		  <version>1.0.0</version>
 		</dependency>
 	</dependencies>
 
